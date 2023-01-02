@@ -1,0 +1,21 @@
+version: '3'
+services:
+  web-flask:
+    hostname: web-flask
+    build: 
+      context: .
+      dockerfile: DockerfileServer 
+    command: python app.py 
+    ports:
+      - "5000:5000"
+
+  web-vue:
+    hostname: web-vue
+    build: 
+      context: .
+      dockerfile: DockerfileVue 
+    command: npm run serve
+    ports:
+      - "8080:8080"
+       
+   
